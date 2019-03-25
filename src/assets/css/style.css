@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Kalam);
+
+html,
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: #ecf0f1;
+}
+
+.App {
+    display: table;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.homepage {
+    display: table;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.homepage-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.homepage .rock-paper-scissors {
+    font-size: 5em;
+    color: #fd79a8;
+    font-family: 'Kalam', cursive;
+}
+
+.homepage .play-button {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2em;
+    font-family: 'Kalam', cursive;
+    padding: 1em 3em;
+    border: 0;
+    border-radius: 15px;
+    color: #fff;
+    background: #fd79a8;
+    transition: all 0.5s ease;
+}
+
+.homepage .play-button:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+    transition: all 0.5s ease;
+}
+
+.timer {
+    display: block;
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background: #fd79a8;
+    border-radius: 15px;
+    font-size: 2em;
+    width: 10em;
+    height: 5em;
+}
+
+.timer h1 {
+    color: #fff;
+    font-family: 'Kalam', cursive;
+}
