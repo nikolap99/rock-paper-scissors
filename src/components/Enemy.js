@@ -3,9 +3,9 @@ import React, { Component } from "react";
 class Enemy extends Component {
     render() {
         return (
-            <div>
-                <h1>Enemy</h1>
-            </div>
+            <button className="enemy-btn">
+                <img src={this.props.image} alt={this.props.title} />
+            </button>
         );
     }
 }

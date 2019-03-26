@@ -60,7 +60,7 @@ body {
 
 .timer {
     display: block;
-    position: fixed;
+    position: absolute;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -72,11 +72,97 @@ body {
     background: #fd79a8;
     border-radius: 15px;
     font-size: 2em;
-    width: 10em;
+    width: 15em;
     height: 5em;
 }
 
 .timer h1 {
     color: #fff;
     font-family: 'Kalam', cursive;
+}
+
+.play-btn {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 62%;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background: #fd79a8;
+    border-radius: 15px;
+    color: #fff;
+    font-family: 'Kalam', cursive;
+    font-size: 1.5em;
+    width: 10em;
+    height: 2em;
+    transition: all 0.5s ease;
+}
+
+.play-btn:hover {
+    transition: all 0.5s ease;
+    transform: scale(1.05);
+}
+
+.player-container {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 8%;
+    text-align: center;
+}
+
+.player-btn {
+    cursor: pointer;
+    margin: 0 5em;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    width: 15em;
+}
+
+.player-btn img {
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.player-btn:hover img {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+.player-btn .shadowed {
+    -webkit-filter: drop-shadow(0px 0px 10px #e84393);
+    filter: drop-shadow(0px 0px 10px #e84393);
+    transition: all 0.5s ease;
+}
+
+.disabled {
+    cursor: not-allowed !important;
+}
+
+.enemy-container {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 8%;
+    text-align: center;
+}
+
+.enemy-btn {
+    cursor: default;
+    margin: 0 5em;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    width: 15em;
+}
+
+.enemy-btn img {
+    width: 100%;
 }
