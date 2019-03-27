@@ -42,52 +42,81 @@ body {
 .homepage {
     @include tableContainer;
 
-    .play-button {
+    .homepage-content {
         display: table-cell;
         vertical-align: middle;
         text-align: center;
-        font-family: 'Kalam', cursive;
-        font-size: 2em;
-        padding: 1em 3em;
-        border: 0;
-        border-radius: 15px;
-        color: #fff;
-        background: $pinkLight;
-        transition: all 0.5s ease;
 
-        &:hover {
-            cursor: pointer;
-            transform: scale(0.95);
+        .rock-paper-scissors {
+            font-size: 5em;
+            color: $pinkLight;
+            font-family: 'Kalam', cursive;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .rock-paper-scissors {
+                font-size: 3em;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .rock-paper-scissors {
+                font-size: 2em;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            .rock-paper-scissors {
+                font-size: 1.5em;
+            }
+        }
+
+        .play-button {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            font-family: 'Kalam', cursive;
+            font-size: 2em;
+            padding: 1em 3em;
+            border: 0;
+            border-radius: 15px;
+            color: #fff;
+            background: $pinkLight;
             transition: all 0.5s ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(0.95);
+                transition: all 0.5s ease;
+            }
+        }
+
+        @media only screen and (max-width: 900px) {
+            .play-button {
+                font-size: 1.5em;
+                padding: 0.8em 3em;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .play-button {
+                font-size: 1.3em;
+                padding: 0.5em 2.5em;
+            }
         }
     }
-
 }
-
-.homepage-content {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-
-    .rock-paper-scissors {
-        font-size: 5em;
-        color: $pinkLight;
-        font-family: 'Kalam', cursive;
-    }
-}
-
-
 
 .timer {
     @include pinkButton;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 2em;
     width: 15em;
     height: 5em;
 }
 
 .timer h1 {
+    font-size: 2em;
     color: #fff;
     font-family: 'Kalam', cursive;
 }
@@ -120,11 +149,13 @@ body {
 
 .player-btn {
     cursor: pointer;
-    margin: 0 5em;
+    position: relative;
+    margin: 0 1em;
     border: 0;
     outline: 0;
     background: transparent;
-    width: 15em;
+    width: 13em;
+    max-width: 25vw;
 }
 
 .player-btn img {
@@ -165,7 +196,8 @@ body {
     border: 0;
     outline: 0;
     background: transparent;
-    width: 15em;
+    width: 13em;
+    max-width: 40vw;
 }
 
 .enemy-btn img {

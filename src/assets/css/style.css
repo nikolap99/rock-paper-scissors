@@ -25,7 +25,37 @@ body {
   overflow: hidden;
 }
 
-.homepage .play-button {
+.homepage .homepage-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.homepage .homepage-content .rock-paper-scissors {
+  font-size: 5em;
+  color: #fd79a8;
+  font-family: 'Kalam', cursive;
+}
+
+@media only screen and (max-width: 900px) {
+  .homepage .homepage-content .rock-paper-scissors {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .homepage .homepage-content .rock-paper-scissors {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .homepage .homepage-content .rock-paper-scissors {
+    font-size: 1.5em;
+  }
+}
+
+.homepage .homepage-content .play-button {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -40,7 +70,7 @@ body {
   transition: all 0.5s ease;
 }
 
-.homepage .play-button:hover {
+.homepage .homepage-content .play-button:hover {
   cursor: pointer;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
@@ -48,16 +78,18 @@ body {
   transition: all 0.5s ease;
 }
 
-.homepage-content {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+@media only screen and (max-width: 900px) {
+  .homepage .homepage-content .play-button {
+    font-size: 1.5em;
+    padding: 0.8em 3em;
+  }
 }
 
-.homepage-content .rock-paper-scissors {
-  font-size: 5em;
-  color: #fd79a8;
-  font-family: 'Kalam', cursive;
+@media only screen and (max-width: 600px) {
+  .homepage .homepage-content .play-button {
+    font-size: 1.3em;
+    padding: 0.5em 2.5em;
+  }
 }
 
 .timer {
@@ -74,12 +106,12 @@ body {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  font-size: 2em;
   width: 15em;
   height: 5em;
 }
 
 .timer h1 {
+  font-size: 2em;
   color: #fff;
   font-family: 'Kalam', cursive;
 }
@@ -124,11 +156,13 @@ body {
 
 .player-btn {
   cursor: pointer;
-  margin: 0 5em;
+  position: relative;
+  margin: 0 1em;
   border: 0;
   outline: 0;
   background: transparent;
-  width: 15em;
+  width: 13em;
+  max-width: 25vw;
 }
 
 .player-btn img {
@@ -172,7 +206,8 @@ body {
   border: 0;
   outline: 0;
   background: transparent;
-  width: 15em;
+  width: 13em;
+  max-width: 40vw;
 }
 
 .enemy-btn img {
