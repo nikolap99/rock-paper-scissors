@@ -10,7 +10,7 @@ $pinkDark: #e84393;
     padding: 0;
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -28,19 +28,23 @@ $pinkDark: #e84393;
 }
 
 html,
-body {
+body,
+#root {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    height: 100%;
     background: #ecf0f1;
 }
 
 .App {
+    height: 100%;
     @include tableContainer;
 }
 
 .homepage {
     @include tableContainer;
+    height: 100%;
 
     .homepage-content {
         display: table-cell;
@@ -50,7 +54,7 @@ body {
         .rock-paper-scissors {
             font-size: 5em;
             color: $pinkLight;
-            font-family: 'Kalam', cursive;
+            font-family: "Kalam", cursive;
         }
 
         @media only screen and (max-width: 900px) {
@@ -75,7 +79,7 @@ body {
             display: table-cell;
             vertical-align: middle;
             text-align: center;
-            font-family: 'Kalam', cursive;
+            font-family: "Kalam", cursive;
             font-size: 2em;
             padding: 1em 3em;
             border: 0;
@@ -118,14 +122,14 @@ body {
 .timer h1 {
     font-size: 2em;
     color: #fff;
-    font-family: 'Kalam', cursive;
+    font-family: "Kalam", cursive;
 }
 
 .play-btn {
     @include pinkButton;
     top: 62%;
     color: #fff;
-    font-family: 'Kalam', cursive;
+    font-family: "Kalam", cursive;
     font-size: 1.5em;
     width: 10em;
     height: 2em;
@@ -171,9 +175,12 @@ body {
 .player-btn .shadowed {
     /*-webkit-filter: drop-shadow(0px 0px 10px $pinkDark);
     filter: drop-shadow(0px 0px 10px $pinkDark);*/
-    -webkit-filter: drop-shadow(2px 2px 0 black) drop-shadow(-2px 2px 0 $pinkDark) drop-shadow(2px -2px 0 $pinkDark) drop-shadow(-2px -2px 0 $pinkDark);
+    -webkit-filter: drop-shadow(2px 2px 0 black)
+        drop-shadow(-2px 2px 0 $pinkDark) drop-shadow(2px -2px 0 $pinkDark)
+        drop-shadow(-2px -2px 0 $pinkDark);
 
-    filter: drop-shadow(2px 2px 0 $pinkDark) drop-shadow(-2px 2px 0 $pinkDark) drop-shadow(2px -2px 0 $pinkDark) drop-shadow(-2px -2px 0 $pinkDark);
+    filter: drop-shadow(2px 2px 0 $pinkDark) drop-shadow(-2px 2px 0 $pinkDark)
+        drop-shadow(2px -2px 0 $pinkDark) drop-shadow(-2px -2px 0 $pinkDark);
     transition: all 0.5s ease;
 }
 
