@@ -75,31 +75,33 @@ class App extends Component {
         } else if (rand === 2) {
             this.setState({ enemy: "scissors", enemyImg: scissorsImg });
         }
+
         // Result
+        const enemy = this.state.enemy;
         if (this.state.isRock) {
-            if (this.state.enemy === "rock") {
-                this.setState({ result: "Draw!" });
-            } else if (this.state.enemy === "paper") {
-                this.setState({ result: "You lose!" });
-            } else if (this.state.enemy === "scissors") {
-                this.setState({ result: "You win!" });
-            }
+            enemy === "rock"
+                ? this.setState({ result: "Draw!" })
+                : enemy === "paper"
+                ? this.setState({ result: "You lose!" })
+                : enemy === "scissors"
+                ? this.setState({ result: "You win!" })
+                : this.setState({ result: null });
         } else if (this.state.isPaper) {
-            if (this.state.enemy === "rock") {
-                this.setState({ result: "You win!" });
-            } else if (this.state.enemy === "paper") {
-                this.setState({ result: "Draw!" });
-            } else if (this.state.enemy === "scissors") {
-                this.setState({ result: "You lose!" });
-            }
+            enemy === "rock"
+                ? this.setState({ result: "You win!" })
+                : enemy === "paper"
+                ? this.setState({ result: "Draw!" })
+                : enemy === "scissors"
+                ? this.setState({ result: "You lose!" })
+                : this.setState({ result: null });
         } else if (this.state.isScissors) {
-            if (this.state.enemy === "rock") {
-                this.setState({ result: "You lose!" });
-            } else if (this.state.enemy === "paper") {
-                this.setState({ result: "You win!" });
-            } else if (this.state.enemy === "scissors") {
-                this.setState({ result: "Draw!" });
-            }
+            enemy === "rock"
+                ? this.setState({ result: "You lose!" })
+                : enemy === "paper"
+                ? this.setState({ result: "You win!" })
+                : enemy === "scissors"
+                ? this.setState({ result: "Draw!" })
+                : this.setState({ result: null });
         }
     }
 
