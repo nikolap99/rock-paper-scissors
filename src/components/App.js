@@ -24,7 +24,7 @@ class App extends Component {
     }
 
     // Countdown
-    countdownStart() {
+    countdownStart = () => {
         // Set the counter inside the state to 5
         this.setState({ count: 5 });
         this.timer = setInterval(() => {
@@ -34,11 +34,11 @@ class App extends Component {
                 this.countdownStop();
             }
         }, 1000);
-    }
+    };
 
     // Stops the countdown and resets the state
 
-    countdownStop() {
+    countdownStop = () => {
         if (this.timer) {
             clearInterval(this.timer);
             // Call randomEnemy to set the result
@@ -50,7 +50,7 @@ class App extends Component {
                 isDisabled: true
             });
         }
-    }
+    };
 
     // Sets the state so we know what is chosen
     handleClick = e => {
@@ -66,7 +66,7 @@ class App extends Component {
     };
 
     // Set the random enemy name and image inside the state and call when the timer is over
-    randomEnemy() {
+    randomEnemy = () => {
         const rand = Math.floor(Math.random() * 3);
         if (rand === 0) {
             this.setState({ enemy: "rock", enemyImg: rockImg });
@@ -78,32 +78,26 @@ class App extends Component {
 
         // Result
         const enemy = this.state.enemy;
-        if (this.state.isRock) {
-            enemy === "rock"
-                ? this.setState({ result: "Draw!" })
-                : enemy === "paper"
-                ? this.setState({ result: "You lose!" })
-                : enemy === "scissors"
-                ? this.setState({ result: "You win!" })
-                : this.setState({ result: null });
-        } else if (this.state.isPaper) {
-            enemy === "rock"
-                ? this.setState({ result: "You win!" })
-                : enemy === "paper"
-                ? this.setState({ result: "Draw!" })
-                : enemy === "scissors"
-                ? this.setState({ result: "You lose!" })
-                : this.setState({ result: null });
-        } else if (this.state.isScissors) {
-            enemy === "rock"
-                ? this.setState({ result: "You lose!" })
-                : enemy === "paper"
-                ? this.setState({ result: "You win!" })
-                : enemy === "scissors"
-                ? this.setState({ result: "Draw!" })
-                : this.setState({ result: null });
+        if (
+            (this.state.isRock && enemy === "rock") ||
+            (this.state.isPaper && enemy === "paper") ||
+            (this.state.isScissors && enemy === "scissors")
+        ) {
+            this.setState({ result: "Draw!" });
+        } else if (
+            (this.state.isRock && enemy === "scissors") ||
+            (this.state.isPaper && enemy === "rock") ||
+            (this.state.isScissors && enemy === "paper")
+        ) {
+            this.setState({ result: "You win!" });
+        } else if (
+            (this.state.isRock && enemy === "paper") ||
+            (this.state.isPaper && enemy === "scissors") ||
+            (this.state.isScissors && enemy === "rock")
+        ) {
+            this.setState({ result: "You lose!" });
         }
-    }
+    };
 
     // Reset the state and start counter again
     playAgain = () => {
